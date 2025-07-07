@@ -1,0 +1,72 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SEO } from 'astro-seo';
+import type { Props as SEOProps } from 'astro-seo';
+
+// Define the props that each page can pass to the layout
+export interface Props {
+  title: string;
+  description: string;
+  seo?: SEOProps;
+}
+
+const { title, description, seo } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <!-- SEO Component -->
+    <SEO
+      title={title}
+      description={description}
+      canonical={Astro.url.href}
+      openGraph={{
+        basic: {
+          title: title,
+          type: 'website',
+          image: new URL('/images/social-card.jpg', Astro.url).href,
+        },
+      }}
+      twitter={{
+        creator: '@fruitexportco',
+        site: '@fruitexportco',
+        card: 'summary_large_image',
+      }}
+      {...seo}
+    />
+    
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style" />
+    
+    <!-- Schema.org structured data for Organization -->
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Fruit Export Co",
+        "url": "https://www.fruit-export-co.com",
+        "logo": "https://www.fruit-export-co.com/images/logo.png",
+        "description": "Professional import-export services for fresh fruits and vegetables worldwide",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+1-555-FRUIT-CO",
+          "contactType": "sales"
+        }
+      }
+    </script>
+  </head>
+  <body class="text-neutral-800 antialiased">
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

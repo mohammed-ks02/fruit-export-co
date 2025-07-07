@@ -1,0 +1,66 @@
+---
+import Basket3D from '../interactive/Basket3D.jsx';
+// Hero section component
+---
+
+<section class="relative py-20 lg:py-32">
+  <div class="container mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <!-- Left Column - Content -->
+      <div class="text-center lg:text-left">
+        <h1 class="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+          Connecting the World with 
+          <span class="text-green-600">Fresh Excellence</span>
+        </h1>
+        <p class="text-xl text-gray-600 mb-8 max-w-lg">
+          Your premier partner for global fruit and vegetable trade. From farm to port, we ensure quality, reliability, and freshness in every shipment.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          <a href="/products" class="btn-primary text-center">
+            View Our Products
+          </a>
+        </div>
+        
+        <!-- Key Stats -->
+        <div class="grid grid-cols-3 gap-4 mt-12 text-center">
+          <div>
+            <div class="text-2xl font-bold text-green-600">50+</div>
+            <div class="text-sm text-gray-600">Countries Served</div>
+          </div>
+          <div>
+            <div class="text-2xl font-bold text-green-600">25+</div>
+            <div class="text-sm text-gray-600">Years Experience</div>
+          </div>
+          <div>
+            <div class="text-2xl font-bold text-green-600">99%</div>
+            <div class="text-sm text-gray-600">On-Time Delivery</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column - 3D Basket Animation -->
+      <div class="relative">
+        <div class="bg-white rounded-2xl shadow-xl p-8">
+          <div class="text-center mb-4">
+            <h3 class="text-2xl font-bold text-gray-900 mb-2">Fresh Produce Collection</h3>
+            <p class="text-gray-600">
+              Explore our premium selection of fruits and vegetables from around the world
+            </p>
+          </div>
+          <Basket3D client:load />
+        </div>
+        
+        <!-- Floating Elements -->
+        <div class="absolute -top-4 -left-4 bg-yellow-400 rounded-full p-4 shadow-lg animate-bounce">
+          <span class="text-2xl">🍎</span>
+        </div>
+        <div class="absolute -bottom-4 -right-4 bg-green-400 rounded-full p-4 shadow-lg animate-bounce" style="animation-delay: 0.5s;">
+          <span class="text-2xl">🥑</span>
+        </div>
+        <div class="absolute top-1/2 -right-8 bg-orange-400 rounded-full p-3 shadow-lg animate-bounce" style="animation-delay: 1s;">
+          <span class="text-xl">🍊</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
