@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://www.fruit-export-co.com', // Replace with actual domain
+  site: 'https://mohammed-ks02.github.io/fruit-export-co', // Replace with actual domain
   integrations: [
     tailwind(),
     react(),
