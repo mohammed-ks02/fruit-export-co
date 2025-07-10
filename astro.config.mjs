@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  outDir: 'docs',
+  outDir: 'dist',
   site: 'https://mohammed-ks02.github.io/fruit-export-co/',
   base: '/fruit-export-co/', // <--- ADD THIS LINE
   integrations: [
