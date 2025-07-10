@@ -7,6 +7,7 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   outDir: 'docs',
   site: 'https://mohammed-ks02.github.io/fruit-export-co/',
+  base: '/fruit-export-co/', // <--- ADD THIS LINE
   integrations: [
     tailwind(),
     react(),
