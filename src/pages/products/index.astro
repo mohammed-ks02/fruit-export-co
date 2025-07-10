@@ -1,150 +1,149 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
+// Removed 3D imports
 ---
 
+<style>
+  .jump {
+    display: inline-block;
+    animation: jump 1s infinite alternate cubic-bezier(.5,1.8,.5,1);
+  }
+  @keyframes jump {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+  }
+  .fish-jump {
+    display: inline-block;
+    animation: fish-jump 1.2s infinite alternate cubic-bezier(.5,1.8,.5,1);
+  }
+  @keyframes fish-jump {
+    0% { transform: translateY(0) scale(1); filter: brightness(1); }
+    60% { filter: brightness(1.1); }
+    100% { transform: translateY(-18px) scale(1.08); filter: brightness(1.2); }
+  }
+.icon-bg {
+  background: linear-gradient(135deg, #f3f4f6 60%, #e0e7ff 100%);
+  border-radius: 9999px;
+  padding: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  margin: 0.25rem;
+}
+.icon-jump {
+  display: inline-block;
+  animation: icon-jump 1.2s infinite alternate cubic-bezier(.5,1.8,.5,1);
+  transition: filter 0.2s, transform 0.2s;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.08));
+}
+@keyframes icon-jump {
+  0% { transform: translateY(0) scale(1); filter: brightness(1); }
+  60% { filter: brightness(1.1); }
+  100% { transform: translateY(-18px) scale(1.08); filter: brightness(1.2); }
+}
+</style>
+
 <MainLayout 
-  title="Products & Services - Fresh Produce Import Export" 
-  description="Explore our comprehensive range of fresh fruits and vegetables available for global import-export trade, including apples, avocados, citrus fruits, and more."
+  title="Products - Global road" 
+  description="Explore our comprehensive range of fresh fruits, vegetables, and seafood available for global import-export trade with Global road."
 >
   <!-- Hero Section -->
-  <section class="py-16 bg-gradient-to-br from-green-50 to-green-100">
-    <div class="container mx-auto px-6">
+  <section class="section bg-gradient-to-br from-green-50 to-green-100">
+    <div class="container">
       <div class="max-w-4xl mx-auto text-center">
-        <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-          Premium Fresh Produce from Global Sources
+        <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6" data-i18n="products_title">
+          Premium Products for Global Trade
         </h1>
-        <p class="text-xl text-gray-600 leading-relaxed">
-          Our extensive product portfolio spans fresh fruits and vegetables sourced from the world's 
-          finest growing regions, ensuring year-round availability and consistent quality.
+        <p class="text-xl text-gray-600 leading-relaxed" data-i18n="products_desc">
+          Our extensive product portfolio spans fresh fruits, vegetables, and seafood sourced from the world's finest regions, ensuring year-round availability and consistent quality for your import/export needs.
         </p>
       </div>
     </div>
   </section>
 
   <!-- Product Categories -->
-  <section class="py-16 bg-white">
-    <div class="container mx-auto px-6">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        
-        <!-- Product Category 1: Premium Apples -->
-        <div class="card group hover:shadow-xl transition-shadow duration-300">
-          <div class="h-64 bg-gradient-to-br from-red-100 to-red-200 flex items-center justify-center">
-            <span class="text-8xl">🍎</span>
+  <section class="section bg-white">
+    <div class="container space-y-16">
+      <!-- Fish Section -->
+      <div>
+        <h2 class="text-3xl font-bold text-blue-800 mb-8">Fish & Seafood</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="card group hover:shadow-xl transition-shadow duration-300">
+            <img src="/a-photograph-of-a-bountiful-display-of-f_b4wF_Y0aS0GG8Ahr9yNYyA_fLBxwpuzQqKSMHppubv2yg.jpeg" alt="Fresh Fish and Seafood in Processing" class="h-64 w-full object-cover rounded-t-2xl" />
+            <div class="p-4 text-center font-bold text-lg text-blue-900">Seafood Variety</div>
           </div>
-          <div class="p-8 text-center">
-            <h3 class="text-2xl font-bold text-gray-900">Premium Apples</h3>
+          <div class="card group hover:shadow-xl transition-shadow duration-300">
+            <img src="/Gemini_Generated_Image_z76wwqz76wwqz76w.jpg" alt="Fresh Mackerel on Ice" class="h-64 w-full object-cover rounded-t-2xl" />
+            <div class="p-4 text-center font-bold text-lg text-blue-900">Mackerel</div>
           </div>
-        </div>
-
-        <!-- Product Category 2: Hass Avocados -->
-        <div class="card group hover:shadow-xl transition-shadow duration-300">
-          <div class="h-64 bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
-            <span class="text-8xl">🥑</span>
+          <div class="card group hover:shadow-xl transition-shadow duration-300">
+            <img src="/Gemini_Generated_Image_wt1oruwt1oruwt1o.jpg" alt="Bulk Sardines on Ice" class="h-64 w-full object-cover rounded-t-2xl" />
+            <div class="p-4 text-center font-bold text-lg text-blue-900">Sardines</div>
           </div>
-          <div class="p-8 text-center">
-            <h3 class="text-2xl font-bold text-gray-900">Hass Avocados</h3>
-          </div>
-        </div>
-
-        <!-- Product Category 3: Citrus Fruits -->
-        <div class="card group hover:shadow-xl transition-shadow duration-300">
-          <div class="h-64 bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center">
-            <span class="text-8xl">🍊</span>
-          </div>
-          <div class="p-8 text-center">
-            <h3 class="text-2xl font-bold text-gray-900">Citrus Fruits</h3>
+          <div class="card group hover:shadow-xl transition-shadow duration-300">
+            <img src="/Gemini_Generated_Image_79id8579id8579id.jpg" alt="Assorted Seafood Display" class="h-64 w-full object-cover rounded-t-2xl" />
+            <div class="p-4 text-center font-bold text-lg text-blue-900">Assorted Seafood</div>
           </div>
         </div>
-
-        <!-- Product Category 4: Table Grapes -->
-        <div class="card group hover:shadow-xl transition-shadow duration-300">
-          <div class="h-64 bg-gradient-to-br from-purple-100 to-purple-200 flex items-center justify-center">
-            <span class="text-8xl">🍇</span>
-          </div>
-          <div class="p-8 text-center">
-            <h3 class="text-2xl font-bold text-gray-900">Table Grapes</h3>
-          </div>
-        </div>
-
-        <!-- Product Category 5: Leafy Greens -->
-        <div class="card group hover:shadow-xl transition-shadow duration-300">
-          <div class="h-64 bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
-            <span class="text-8xl">🥬</span>
-          </div>
-          <div class="p-8 text-center">
-            <h3 class="text-2xl font-bold text-gray-900">Leafy Greens</h3>
-          </div>
-        </div>
-
-        <!-- Product Category 6: Tropical Fruits -->
-        <div class="card group hover:shadow-xl transition-shadow duration-300">
-          <div class="h-64 bg-gradient-to-br from-yellow-100 to-yellow-200 flex items-center justify-center">
-            <span class="text-8xl">🥭</span>
-          </div>
-          <div class="p-8 text-center">
-            <h3 class="text-2xl font-bold text-gray-900">Tropical Fruits</h3>
-          </div>
-        </div>
-
       </div>
-    </div>
-  </section>
-
-  <!-- Services Section -->
-  <section class="py-16 bg-gray-50">
-    <div class="container mx-auto px-6">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-          Complete Import-Export Services
-        </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Beyond sourcing, we provide end-to-end services to ensure seamless international trade operations.
-        </p>
+      <!-- Vegetables Section -->
+      <div>
+        <h2 class="text-3xl font-bold text-green-800 mb-8">Vegetables</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="card group hover:shadow-xl transition-shadow duration-300">
+            <img src="/Gemini_Generated_Image_9jwo6q9jwo6q9jwo.jpg" alt="Vibrant Fruiting Vegetable Mix" class="h-48 w-full object-cover rounded-t-2xl" />
+            <div class="p-4 text-center font-bold text-lg text-green-900">Fruiting Vegetables</div>
+          </div>
+          <div class="card group hover:shadow-xl transition-shadow duration-300">
+            <img src="/Gemini_Generated_Image_etsk6cetsk6cetsk.jpg" alt="Large-Scale Root Vegetable and Produce Storage" class="h-48 w-full object-cover rounded-t-2xl" />
+            <div class="p-4 text-center font-bold text-lg text-green-900">Root Vegetables</div>
+          </div>
+          <div class="card group hover:shadow-xl transition-shadow duration-300">
+            <img src="/Gemini_Generated_Image_ext8xoext8xoext8.jpg" alt="Assorted Leafy Greens Display" class="h-48 w-full object-cover rounded-t-2xl" />
+            <div class="p-4 text-center font-bold text-lg text-green-900">Leafy Greens</div>
+          </div>
+          <div class="card group hover:shadow-xl transition-shadow duration-300">
+            <img src="/Gemini_Generated_Image_fum469fum469fum4.jpg" alt="Bulk Mushroom Varieties" class="h-48 w-full object-cover rounded-t-2xl" />
+            <div class="p-4 text-center font-bold text-lg text-green-900">Mushrooms</div>
+          </div>
+        </div>
       </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div class="text-center">
-          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
-            </svg>
+      <!-- Fruits Section -->
+      <div>
+        <h2 class="text-3xl font-bold text-orange-800 mb-8">Fruits</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="card group hover:shadow-xl transition-shadow duration-300">
+            <img src="/Gemini_Generated_Image_mu7l00mu7l00mu7l.jpg" alt="Bulk Dried Fruits Assortment" class="h-64 w-full object-cover rounded-t-2xl" />
+            <div class="p-4 text-center font-bold text-lg text-orange-900">Dried Fruits</div>
           </div>
-          <h3 class="font-bold text-lg mb-2">Global Sourcing</h3>
-          <p class="text-gray-600 text-sm">Direct relationships with premium growers worldwide</p>
-        </div>
-
-        <div class="text-center">
-          <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-            </svg>
+          <div class="card group hover:shadow-xl transition-shadow duration-300">
+            <img src="/Gemini_Generated_Image_1qyxix1qyxix1qyx.jpg" alt="Citrus Fruit Warehouse" class="h-64 w-full object-cover rounded-t-2xl" />
+            <div class="p-4 text-center font-bold text-lg text-orange-900">Citrus Fruits</div>
           </div>
-          <h3 class="font-bold text-lg mb-2">Quality Assurance</h3>
-          <p class="text-gray-600 text-sm">Rigorous quality control and certification processes</p>
-        </div>
-
-        <div class="text-center">
-          <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M8 5a1 1 0 100 2h5.586l-1.293 1.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L13.586 5H8zM12 15a1 1 0 100-2H6.414l1.293-1.293a1 1 0 10-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L6.414 15H12z" />
-            </svg>
+          <div class="card group hover:shadow-xl transition-shadow duration-300">
+            <img src="/Gemini_Generated_Image_6qmkbw6qmkbw6qmk.jpg" alt="Melons in Commercial Storage" class="h-64 w-full object-cover rounded-t-2xl" />
+            <div class="p-4 text-center font-bold text-lg text-orange-900">Melons</div>
           </div>
-          <h3 class="font-bold text-lg mb-2">Logistics Management</h3>
-          <p class="text-gray-600 text-sm">End-to-end freight and cold chain management</p>
-        </div>
-
-        <div class="text-center">
-          <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
-            </svg>
+          <div class="card group hover:shadow-xl transition-shadow duration-300">
+            <img src="/Gemini_Generated_Image_fnmknefnmknefnmk.jpg" alt="Carefully Packed Fresh Berries" class="h-64 w-full object-cover rounded-t-2xl" />
+            <div class="p-4 text-center font-bold text-lg text-orange-900">Berries</div>
           </div>
-          <h3 class="font-bold text-lg mb-2">Trade Finance</h3>
-          <p class="text-gray-600 text-sm">Flexible payment terms and financing solutions</p>
+          <div class="card group hover:shadow-xl transition-shadow duration-300">
+            <img src="/Gemini_Generated_Image_m3o889m3o889m3o8.jpg" alt="Apple and Pear Storage Facility" class="h-64 w-full object-cover rounded-t-2xl" />
+            <div class="p-4 text-center font-bold text-lg text-orange-900">Apples & Pears</div>
+          </div>
+          <div class="card group hover:shadow-xl transition-shadow duration-300">
+            <img src="/Gemini_Generated_Image_iynxkciynxkciynx.jpg" alt="Expansive Apple Warehouse" class="h-64 w-full object-cover rounded-t-2xl" />
+            <div class="p-4 text-center font-bold text-lg text-orange-900">Apple Warehouse</div>
+          </div>
+          <div class="card group hover:shadow-xl transition-shadow duration-300">
+            <img src="/Gemini_Generated_Image_glbzbzglbzbzglbz.jpg" alt="Bulk Berries in Storage" class="h-64 w-full object-cover rounded-t-2xl" />
+            <div class="p-4 text-center font-bold text-lg text-orange-900">Bulk Berries</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
-
 
 </MainLayout>

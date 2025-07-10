@@ -3,51 +3,49 @@ import MainLayout from '../layouts/MainLayout.astro';
 ---
 
 <MainLayout 
-  title="About Us - Our Story & Mission" 
-  description="Learn about Fruit Export Co's 25+ year journey in global fresh produce trade, our mission, values, and commitment to sustainable sourcing."
+  title="About Us - 🚢 Global road" 
+  description="Learn about 🚢 Global road's journey in global import/export, our mission, values, and commitment to reliable logistics and fresh produce."
 >
   <!-- Hero Section -->
-  <section class="py-16 bg-gradient-to-br from-green-50 to-green-100">
-    <div class="container mx-auto px-6">
+  <section class="section bg-gradient-to-br from-green-50 to-green-100">
+    <div class="container">
       <div class="max-w-4xl mx-auto text-center">
-        <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-          Our Story: 25+ Years of Fresh Excellence
+        <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6" data-i18n="about_title">
+          Our Story: 25+ Years of Global Trade Excellence
         </h1>
-        <p class="text-xl text-gray-600 leading-relaxed">
-          From a small family operation to a global leader in fresh produce trade, 
-          our journey has been driven by an unwavering commitment to quality, 
-          sustainability, and building lasting partnerships.
+        <p class="text-xl text-gray-600 leading-relaxed" data-i18n="about_desc">
+          From a small operation to a global leader in import/export logistics, our journey has been driven by an unwavering commitment to quality, reliability, and building lasting partnerships.
         </p>
       </div>
     </div>
   </section>
 
   <!-- Mission & Values -->
-  <section class="py-16 bg-white">
-    <div class="container mx-auto px-6">
+  <section class="section bg-white">
+    <div class="container">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
-          <h2 class="text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
-          <p class="text-lg text-gray-600 mb-6">
+          <h2 class="text-3xl font-bold text-gray-900 mb-6" data-i18n="about_mission_title">Our Mission</h2>
+          <p class="text-lg text-gray-600 mb-6" data-i18n="about_mission_1">
             To connect the world's finest farms with businesses that demand exceptional quality, 
             creating sustainable value for growers, partners, and consumers while promoting 
             responsible agricultural practices globally.
           </p>
-          <p class="text-lg text-gray-600">
+          <p class="text-lg text-gray-600" data-i18n="about_mission_2">
             We believe that fresh, high-quality produce should be accessible to businesses 
             worldwide, regardless of geographic boundaries or seasonal limitations.
           </p>
         </div>
         <div class="bg-green-50 rounded-xl p-8">
-          <h3 class="text-2xl font-bold text-green-800 mb-4">Our Core Values</h3>
+          <h3 class="text-2xl font-bold text-green-800 mb-4" data-i18n="about_values_title">Our Core Values</h3>
           <ul class="space-y-3">
             <li class="flex items-start">
               <svg class="w-6 h-6 text-green-600 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
               </svg>
               <div>
-                <span class="font-semibold text-gray-900">Quality First:</span>
-                <span class="text-gray-600"> Never compromising on the standards that define exceptional produce</span>
+                <span class="font-semibold text-gray-900" data-i18n="about_value_quality">Quality First:</span>
+                <span class="text-gray-600" data-i18n="about_value_quality_desc"> Never compromising on the standards that define exceptional produce</span>
               </div>
             </li>
             <li class="flex items-start">
@@ -55,8 +53,8 @@ import MainLayout from '../layouts/MainLayout.astro';
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
               </svg>
               <div>
-                <span class="font-semibold text-gray-900">Sustainability:</span>
-                <span class="text-gray-600"> Supporting eco-friendly farming and responsible trade practices</span>
+                <span class="font-semibold text-gray-900" data-i18n="about_value_sustain">Sustainability:</span>
+                <span class="text-gray-600" data-i18n="about_value_sustain_desc"> Supporting eco-friendly farming and responsible trade practices</span>
               </div>
             </li>
             <li class="flex items-start">
@@ -64,8 +62,8 @@ import MainLayout from '../layouts/MainLayout.astro';
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
               </svg>
               <div>
-                <span class="font-semibold text-gray-900">Partnership:</span>
-                <span class="text-gray-600"> Building long-term relationships based on trust and mutual success</span>
+                <span class="font-semibold text-gray-900" data-i18n="about_value_partner">Partnership:</span>
+                <span class="text-gray-600" data-i18n="about_value_partner_desc"> Building long-term relationships based on trust and mutual success</span>
               </div>
             </li>
             <li class="flex items-start">
@@ -73,8 +71,8 @@ import MainLayout from '../layouts/MainLayout.astro';
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
               </svg>
               <div>
-                <span class="font-semibold text-gray-900">Innovation:</span>
-                <span class="text-gray-600"> Continuously improving our processes and embracing new technologies</span>
+                <span class="font-semibold text-gray-900" data-i18n="about_value_innov">Innovation:</span>
+                <span class="text-gray-600" data-i18n="about_value_innov_desc"> Continuously improving our processes and embracing new technologies</span>
               </div>
             </li>
           </ul>
@@ -82,4 +80,40 @@ import MainLayout from '../layouts/MainLayout.astro';
       </div>
     </div>
   </section>
+
+  <section class="divider"></section>
+
 </MainLayout>
+
+<style>
+.fish-jump {
+  display: inline-block;
+  animation: fish-jump 1.2s infinite alternate cubic-bezier(.5,1.8,.5,1);
+}
+@keyframes fish-jump {
+  0% { transform: translateY(0) scale(1); filter: brightness(1); }
+  60% { filter: brightness(1.1); }
+  100% { transform: translateY(-18px) scale(1.08); filter: brightness(1.2); }
+}
+.icon-bg {
+  background: linear-gradient(135deg, #f3f4f6 60%, #e0e7ff 100%);
+  border-radius: 9999px;
+  padding: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  margin: 0.25rem;
+}
+.icon-jump {
+  display: inline-block;
+  animation: icon-jump 1.2s infinite alternate cubic-bezier(.5,1.8,.5,1);
+  transition: filter 0.2s, transform 0.2s;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.08));
+}
+@keyframes icon-jump {
+  0% { transform: translateY(0) scale(1); filter: brightness(1); }
+  60% { filter: brightness(1.1); }
+  100% { transform: translateY(-18px) scale(1.08); filter: brightness(1.2); }
+}
+</style>

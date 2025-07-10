@@ -1,31 +1,35 @@
 ---
-// Header component with main navigation
+// Header component for Global road
 ---
 
-<header class="bg-white shadow-lg sticky top-0 z-50">
-  <nav class="container mx-auto px-6 py-4">
+<header class="bg-white shadow-lg sticky top-0 z-50 py-4">
+  <nav class="container py-2">
     <div class="flex justify-between items-center">
       <!-- Logo -->
       <div class="flex items-center">
-        <a href="/" class="text-2xl font-bold text-green-800 hover:text-green-600 transition-colors">
-          🍎 Fruit Export Co
+        <a href="/" class="text-2xl font-bold text-green-800 hover:text-green-600 transition-colors flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 text-green-700"><rect x="2" y="7" width="15" height="10" rx="2"/><rect x="17" y="10" width="5" height="7" rx="1"/><circle cx="7" cy="19" r="2"/><circle cx="19" cy="19" r="2"/></svg>
+          <span data-i18n="brand">Global road</span>
         </a>
       </div>
 
       <!-- Desktop Navigation -->
       <div class="hidden lg:flex items-center space-x-8">
-        <a href="/" class="text-gray-700 hover:text-green-600 font-medium transition-colors">
+        <a href="/" class="text-gray-700 hover:text-green-600 font-medium transition-colors" data-i18n="nav_home">
           Home
         </a>
-        <a href="/about" class="text-gray-700 hover:text-green-600 font-medium transition-colors">
+        <a href="/products" class="text-gray-700 hover:text-green-600 font-medium transition-colors" data-i18n="nav_products">
+          Products
+        </a>
+        <a href="/about" class="text-gray-700 hover:text-green-600 font-medium transition-colors" data-i18n="nav_about">
           About Us
         </a>
-        <a href="/products" class="text-gray-700 hover:text-green-600 font-medium transition-colors">
-          Products & Services
-        </a>
-        <a href="/contact" class="text-gray-700 hover:text-green-600 font-medium transition-colors">
+        <a href="/contact" class="text-gray-700 hover:text-green-600 font-medium transition-colors" data-i18n="nav_contact">
           Contact
         </a>
+        <button id="lang-toggle" onclick="toggleLang()" class="ml-4 px-4 py-2 rounded-lg bg-gray-100 hover:bg-green-100 text-green-800 font-semibold transition">
+          <span data-i18n="lang_btn">FR</span>
+        </button>
       </div>
 
       <!-- Mobile menu button -->
@@ -34,7 +38,9 @@
           type="button" 
           class="text-gray-700 hover:text-green-600 focus:outline-none focus:text-green-600"
           aria-label="Toggle mobile menu"
-          onclick="toggleMobileMenu()"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          id="mobile-menu-toggle"
         >
           <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -46,28 +52,164 @@
     <!-- Mobile Navigation Menu -->
     <div id="mobile-menu" class="lg:hidden hidden mt-4 pb-4">
       <div class="flex flex-col space-y-4">
-        <a href="/" class="text-gray-700 hover:text-green-600 font-medium py-2">
+        <a href="/" class="text-gray-700 hover:text-green-600 font-medium py-2" data-i18n="nav_home">
           Home
         </a>
-        <a href="/about" class="text-gray-700 hover:text-green-600 font-medium py-2">
+        <a href="/products" class="text-gray-700 hover:text-green-600 font-medium py-2" data-i18n="nav_products">
+          Products
+        </a>
+        <a href="/about" class="text-gray-700 hover:text-green-600 font-medium py-2" data-i18n="nav_about">
           About Us
         </a>
-        <a href="/products" class="text-gray-700 hover:text-green-600 font-medium py-2">
-          Products & Services
-        </a>
-        <a href="/contact" class="text-gray-700 hover:text-green-600 font-medium py-2">
+        <a href="/contact" class="text-gray-700 hover:text-green-600 font-medium py-2" data-i18n="nav_contact">
           Contact
         </a>
+        <button id="lang-toggle-mobile" onclick="toggleLang()" class="mt-2 px-4 py-2 rounded-lg bg-gray-100 hover:bg-green-100 text-green-800 font-semibold transition text-center">
+          <span data-i18n="lang_btn">FR</span>
+        </button>
       </div>
     </div>
   </nav>
 </header>
 
 <script is:inline>
-  function toggleMobileMenu() {
-    const menu = document.getElementById('mobile-menu');
-    if (menu) {
-      menu.classList.toggle('hidden');
+  const translations = {
+    en: {
+      brand: "Global road",
+      nav_home: "Home",
+      nav_products: "Products",
+      nav_about: "About Us",
+      nav_contact: "Contact",
+      lang_btn: "FR",
+      // Footer
+      footer_desc: "Your trusted partner in global import & export. Connecting the world with reliable logistics and fresh produce.",
+      footer_links: "Quick Links",
+      footer_contact: "Contact Us",
+      footer_address: "Rue 36 Ibn tachfine agdal rabat",
+      footer_phone: "+212 600-000000",
+      footer_email: "contact@globalroad.com",
+      footer_copyright: `© ${new Date().getFullYear()} Global road. All rights reserved.`,
+      // Hero
+      hero_title: "Premium Products for Global Trade",
+      hero_desc: "Your premier partner for global import/export and logistics. From port to port, Global road ensures quality, reliability, and seamless delivery in every shipment.",
+      hero_btn: "View Our Products",
+      hero_countries: "Countries Served",
+      hero_experience: "Years Experience",
+      hero_ontime: "On-Time Delivery",
+      // About
+      about_title: "Our Story: 25+ Years of Global Trade Excellence",
+      about_desc: "From a small operation to a global leader in import/export logistics, our journey has been driven by an unwavering commitment to quality, reliability, and building lasting partnerships.",
+      about_mission_title: "Our Mission",
+      about_mission_1: "To connect the world's finest farms with businesses that demand exceptional quality, creating sustainable value for growers, partners, and consumers while promoting responsible agricultural practices globally.",
+      about_mission_2: "We believe that fresh, high-quality produce should be accessible to businesses worldwide, regardless of geographic boundaries or seasonal limitations.",
+      about_values_title: "Our Core Values",
+      about_value_quality: "Quality First:",
+      about_value_quality_desc: " Never compromising on the standards that define exceptional produce",
+      about_value_sustain: "Sustainability:",
+      about_value_sustain_desc: " Supporting eco-friendly farming and responsible trade practices",
+      about_value_partner: "Partnership:",
+      about_value_partner_desc: " Building long-term relationships based on trust and mutual success",
+      about_value_innov: "Innovation:",
+      about_value_innov_desc: " Continuously improving our processes and embracing new technologies",
+      // Products
+      products_title: "Premium Products for Global Trade",
+      products_desc: "Our extensive product portfolio spans fresh fruits, vegetables, and seafood sourced from the world's finest regions, ensuring year-round availability and consistent quality for your import/export needs.",
+      products_fruits: "Premium Fruits",
+      products_fruits_desc: "Fresh apples, oranges, grapes, and tropical fruits",
+      products_veggies: "Fresh Vegetables",
+      products_veggies_desc: "Carrots, broccoli, tomatoes, and leafy greens",
+      products_ops: "Global Operations",
+      products_ops_desc: "Complete supply chain from farm to market",
+      products_grapes: "Table Grapes",
+      products_greens: "Leafy Greens",
+      products_tropical: "Tropical Fruits"
+    },
+    fr: {
+      brand: "Global road",
+      nav_home: "Accueil",
+      nav_products: "Produits",
+      nav_about: "À propos",
+      nav_contact: "Contact",
+      lang_btn: "EN",
+      // Footer
+      footer_desc: "Votre partenaire de confiance en import & export mondial. Connecter le monde avec une logistique fiable et des produits frais.",
+      footer_links: "Liens rapides",
+      footer_contact: "Contactez-nous",
+      footer_address: "Rue 36 Ibn tachfine agdal rabat",
+      footer_phone: "+212 600-000000",
+      footer_email: "contact@globalroad.com",
+      footer_copyright: `© ${new Date().getFullYear()} Global road. Tous droits réservés.`,
+      // Hero
+      hero_title: "Produits premium pour le commerce mondial",
+      hero_desc: "Votre partenaire privilégié pour l'import/export et la logistique mondiale. Du port au port, Global road garantit qualité, fiabilité et livraison sans faille à chaque expédition.",
+      hero_btn: "Voir nos produits",
+      hero_countries: "Pays desservis",
+      hero_experience: "Années d'expérience",
+      hero_ontime: "Livraison à temps",
+      // About
+      about_title: "Notre histoire : plus de 25 ans d'excellence dans le commerce mondial",
+      about_desc: "D'une petite entreprise à un leader mondial de la logistique import/export, notre parcours a été guidé par un engagement indéfectible envers la qualité, la fiabilité et la construction de partenariats durables.",
+      about_mission_title: "Notre mission",
+      about_mission_1: "Relier les meilleures fermes du monde aux entreprises exigeant une qualité exceptionnelle, créant une valeur durable pour les producteurs, partenaires et consommateurs tout en promouvant des pratiques agricoles responsables à l'échelle mondiale.",
+      about_mission_2: "Nous croyons que des produits frais et de haute qualité doivent être accessibles aux entreprises du monde entier, quelles que soient les frontières géographiques ou les limitations saisonnières.",
+      about_values_title: "Nos valeurs fondamentales",
+      about_value_quality: "Qualité avant tout :",
+      about_value_quality_desc: " Ne jamais transiger sur les standards qui définissent des produits d'exception",
+      about_value_sustain: "Durabilité :",
+      about_value_sustain_desc: " Soutenir l'agriculture écologique et des pratiques commerciales responsables",
+      about_value_partner: "Partenariat :",
+      about_value_partner_desc: " Construire des relations à long terme basées sur la confiance et le succès mutuel",
+      about_value_innov: "Innovation :",
+      about_value_innov_desc: " Améliorer continuellement nos processus et adopter de nouvelles technologies",
+      // Products
+      products_title: "Produits premium pour le commerce mondial",
+      products_desc: "Notre large gamme de produits comprend des fruits frais, des légumes et des produits de la mer provenant des meilleures régions du monde, garantissant une disponibilité toute l'année et une qualité constante pour vos besoins d'import/export.",
+      products_fruits: "Fruits premium",
+      products_fruits_desc: "Pommes, oranges, raisins et fruits tropicaux frais",
+      products_veggies: "Légumes frais",
+      products_veggies_desc: "Carottes, brocolis, tomates et légumes-feuilles",
+      products_ops: "Opérations globales",
+      products_ops_desc: "Chaîne d'approvisionnement complète du champ au marché",
+      products_grapes: "Raisins de table",
+      products_greens: "Légumes-feuilles",
+      products_tropical: "Fruits tropicaux"
     }
+  };
+
+  function setLanguage(lang) {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (translations[lang][key]) {
+        el.textContent = translations[lang][key];
+      }
+    });
+    // Update both language buttons
+    const btn = document.getElementById('lang-toggle');
+    if (btn) btn.textContent = translations[lang].lang_btn;
+    const btnMobile = document.getElementById('lang-toggle-mobile');
+    if (btnMobile) btnMobile.textContent = translations[lang].lang_btn;
+    localStorage.setItem('lang', lang);
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const lang = localStorage.getItem('lang') || 'en';
+    setLanguage(lang);
+  });
+
+  window.toggleLang = function() {
+    const current = localStorage.getItem('lang') || 'en';
+    const next = current === 'en' ? 'fr' : 'en';
+    setLanguage(next);
+  };
+
+  // Mobile menu toggle
+  const btn = document.getElementById('mobile-menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+      menu.classList.toggle('hidden');
+    });
   }
 </script>

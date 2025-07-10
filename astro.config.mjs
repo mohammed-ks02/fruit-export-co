@@ -13,5 +13,12 @@ export default defineConfig({
   ],
   image: {
     domains: ['your-cms-domain.com'] // Add your CMS domain here
-  }
+  },
+  vite: {
+    server: {
+      watch: {
+        usePolling: true,
+      },
+    },
+  },
 });
