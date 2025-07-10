@@ -1,5 +1,6 @@
 ---
 // Hero section component
+import { withBase } from '../../utils/basePath';
 ---
 
 <section class="relative section">
@@ -38,7 +39,7 @@
 
       <!-- Right Column - Image Collage -->
       <div class="relative">
-        <img src="/9ef17d90-d5be-48d2-95a1-c7069425d869.jpg" alt="A brightly lit, extensive display of various fresh fruits and vegetables on shelves, including tomatoes, cucumbers, eggplants, bell peppers (red, yellow, green), cauliflower, and ginger. Showcasing the wide variety of fresh produce for import/export." class="rounded-2xl shadow-xl object-cover h-96 w-full" />
+        <img src={withBase('/9ef17d90-d5be-48d2-95a1-c7069425d869.jpg')} alt="A brightly lit, extensive display of various fresh fruits and vegetables on shelves, including tomatoes, cucumbers, eggplants, bell peppers (red, yellow, green), cauliflower, and ginger. Showcasing the wide variety of fresh produce for import/export." class="rounded-2xl shadow-xl object-cover h-96 w-full" />
       </div>
     </div>
   </div>

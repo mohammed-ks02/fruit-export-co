@@ -1,5 +1,6 @@
 ---
 // Featured Products section
+import { withBase } from '../../utils/basePath';
 ---
 
 <section class="section bg-white">
@@ -66,28 +67,28 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
       <!-- Product 1 -->
       <div class="card group hover:shadow-xl transition-shadow duration-300">
-        <img src="/398a9df5-c947-4f43-b400-c546c2d58bf7.jpg" alt="A rustic display of fresh produce, including red bell peppers, tomatoes, eggplants, green vegetables, and squashes or gourds. Showcasing fresh produce for local markets and variety." class="h-48 w-full object-cover rounded-t-2xl" />
+        <img src={withBase('/398a9df5-c947-4f43-b400-c546c2d58bf7.jpg')} alt="A rustic display of fresh produce, including red bell peppers, tomatoes, eggplants, green vegetables, and squashes or gourds. Showcasing fresh produce for local markets and variety." class="h-48 w-full object-cover rounded-t-2xl" />
         <div class="p-6 text-center">
           <h3 class="text-xl font-bold text-gray-900" data-i18n="featured_card4_title">Fresh Produce Variety</h3>
         </div>
       </div>
       <!-- Product 2 -->
       <div class="card group hover:shadow-xl transition-shadow duration-300">
-        <img src="/0fce3e83-de51-4e3a-979e-28bc93fd57f8.jpg" alt="A close-up of fresh fruits and vegetables in boxes, with price tags visible. Includes apples, pumpkin, radishes, and zucchini. Highlights retail-ready produce and quality." class="h-48 w-full object-cover rounded-t-2xl" />
+        <img src={withBase('/0fce3e83-de51-4e3a-979e-28bc93fd57f8.jpg')} alt="A close-up of fresh fruits and vegetables in boxes, with price tags visible. Includes apples, pumpkin, radishes, and zucchini. Highlights retail-ready produce and quality." class="h-48 w-full object-cover rounded-t-2xl" />
         <div class="p-6 text-center">
           <h3 class="text-xl font-bold text-gray-900" data-i18n="featured_card5_title">Retail-Ready Produce</h3>
         </div>
       </div>
       <!-- Product 3 -->
       <div class="card group hover:shadow-xl transition-shadow duration-300">
-        <img src="/b7b29ec1-b35c-4b43-b57d-58b2e2b7467f.jpg" alt="A person in a white lab coat and hairnet inspecting produce on a conveyor belt in a food processing facility. Demonstrates quality control and food safety standards." class="h-48 w-full object-cover rounded-t-2xl" />
+        <img src={withBase('/b7b29ec1-b35c-4b43-b57d-58b2e2b7467f.jpg')} alt="A person in a white lab coat and hairnet inspecting produce on a conveyor belt in a food processing facility. Demonstrates quality control and food safety standards." class="h-48 w-full object-cover rounded-t-2xl" />
         <div class="p-6 text-center">
           <h3 class="text-xl font-bold text-gray-900" data-i18n="featured_card6_title">Quality Control</h3>
         </div>
       </div>
       <!-- Product 4 -->
       <div class="card group hover:shadow-xl transition-shadow duration-300">
-        <img src="/dbf5403f-bf97-46c7-8ed5-7a8c0e089ec0.jpg" alt="A person with avocados and a tablet in a delivery van. Shows loading/unloading, inventory management, and delivery of fresh produce." class="h-48 w-full object-cover rounded-t-2xl" />
+        <img src={withBase('/dbf5403f-bf97-46c7-8ed5-7a8c0e089ec0.jpg')} alt="A person with avocados and a tablet in a delivery van. Shows loading/unloading, inventory management, and delivery of fresh produce." class="h-48 w-full object-cover rounded-t-2xl" />
         <div class="p-6 text-center">
           <h3 class="text-xl font-bold text-gray-900" data-i18n="featured_card7_title">Inventory & Delivery</h3>
         </div>
@@ -95,7 +96,7 @@
     </div>
 
     <div class="text-center mt-12">
-      <a href="/products" class="btn-primary" data-i18n="featured_btn">
+      <a href={withBase('/products')} class="btn-primary" data-i18n="featured_btn">
         View All Products
       </a>
     </div>

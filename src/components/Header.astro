@@ -1,5 +1,6 @@
 ---
 // Header component for Global road
+import { withBase } from '../utils/basePath';
 ---
 
 <header class="bg-white shadow-lg sticky top-0 z-50 py-4">
@@ -7,7 +8,7 @@
     <div class="flex justify-between items-center">
       <!-- Logo -->
       <div class="flex items-center">
-        <a href="/" class="text-2xl font-bold text-green-800 hover:text-green-600 transition-colors flex items-center gap-2">
+        <a href={withBase('/')} class="text-2xl font-bold text-green-800 hover:text-green-600 transition-colors flex items-center gap-2">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 text-green-700"><rect x="2" y="7" width="15" height="10" rx="2"/><rect x="17" y="10" width="5" height="7" rx="1"/><circle cx="7" cy="19" r="2"/><circle cx="19" cy="19" r="2"/></svg>
           <span data-i18n="brand">Global road</span>
         </a>
@@ -15,16 +16,16 @@
 
       <!-- Desktop Navigation -->
       <div class="hidden lg:flex items-center space-x-8">
-        <a href="/" class="text-gray-700 hover:text-green-600 font-medium transition-colors" data-i18n="nav_home">
+        <a href={withBase('/')} class="text-gray-700 hover:text-green-600 font-medium transition-colors" data-i18n="nav_home">
           Home
         </a>
-        <a href="/products" class="text-gray-700 hover:text-green-600 font-medium transition-colors" data-i18n="nav_products">
+        <a href={withBase('/products')} class="text-gray-700 hover:text-green-600 font-medium transition-colors" data-i18n="nav_products">
           Products
         </a>
-        <a href="/about" class="text-gray-700 hover:text-green-600 font-medium transition-colors" data-i18n="nav_about">
+        <a href={withBase('/about')} class="text-gray-700 hover:text-green-600 font-medium transition-colors" data-i18n="nav_about">
           About Us
         </a>
-        <a href="/contact" class="text-gray-700 hover:text-green-600 font-medium transition-colors" data-i18n="nav_contact">
+        <a href={withBase('/contact')} class="text-gray-700 hover:text-green-600 font-medium transition-colors" data-i18n="nav_contact">
           Contact
         </a>
         <button id="lang-toggle" onclick="toggleLang()" class="ml-4 px-4 py-2 rounded-lg bg-gray-100 hover:bg-green-100 text-green-800 font-semibold transition">
@@ -52,16 +53,16 @@
     <!-- Mobile Navigation Menu -->
     <div id="mobile-menu" class="lg:hidden hidden mt-4 pb-4">
       <div class="flex flex-col space-y-4">
-        <a href="/" class="text-gray-700 hover:text-green-600 font-medium py-2" data-i18n="nav_home">
+        <a href={withBase('/')} class="text-gray-700 hover:text-green-600 font-medium py-2" data-i18n="nav_home">
           Home
         </a>
-        <a href="/products" class="text-gray-700 hover:text-green-600 font-medium py-2" data-i18n="nav_products">
+        <a href={withBase('/products')} class="text-gray-700 hover:text-green-600 font-medium py-2" data-i18n="nav_products">
           Products
         </a>
-        <a href="/about" class="text-gray-700 hover:text-green-600 font-medium py-2" data-i18n="nav_about">
+        <a href={withBase('/about')} class="text-gray-700 hover:text-green-600 font-medium py-2" data-i18n="nav_about">
           About Us
         </a>
-        <a href="/contact" class="text-gray-700 hover:text-green-600 font-medium py-2" data-i18n="nav_contact">
+        <a href={withBase('/contact')} class="text-gray-700 hover:text-green-600 font-medium py-2" data-i18n="nav_contact">
           Contact
         </a>
         <button id="lang-toggle-mobile" onclick="toggleLang()" class="mt-2 px-4 py-2 rounded-lg bg-gray-100 hover:bg-green-100 text-green-800 font-semibold transition text-center">
