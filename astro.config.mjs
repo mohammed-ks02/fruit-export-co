@@ -7,14 +7,14 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   outDir: 'dist',
   site: 'https://mohammed-ks02.github.io/fruit-export-co/',
-  base: '/fruit-export-co/', // <--- ADD THIS LINE
+  base: process.env.NODE_ENV === 'production' ? '/fruit-export-co/' : '/',
   integrations: [
     tailwind(),
     react(),
     sitemap()
   ],
   image: {
-    domains: ['your-cms-domain.com'] // Add your CMS domain here
+    domains: ['mohammed-ks02.github.io'] // Updated for GitHub Pages
   },
   vite: {
     server: {
