@@ -6,8 +6,8 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   outDir: 'dist',
-  site: 'https://mohammed-ks02.github.io/fruit-export-co/',
-  base: process.env.NODE_ENV === 'production' ? '/fruit-export-co/' : '/',
+  site: 'https://mohammed-ks02.github.io/import-export-goods/',
+  base: process.env.NODE_ENV === 'production' ? '/import-export-goods/' : '/',
   integrations: [
     tailwind(),
     react(),
